@@ -1,0 +1,134 @@
+/* ====================================
+   App.css - Core Theme & Base Styles
+   ==================================== */
+
+/* CSS Variables for theme management */
+:root {
+  /* Light theme (default) */
+  --primary-500: #2563eb;
+  --primary-600: #1d4ed8;
+  --primary-400: #60a5fa;
+  --secondary-500: #7c3aed;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --white: #ffffff;
+  --black: #020617;
+  
+  /* Semantic tokens */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-50);
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --border-color: var(--gray-200);
+  --card-bg: var(--white);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-sans);
+  
+  /* Other */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 6px -1px var(--shadow-color);
+  --shadow-lg: 0 10px 15px -3px var(--shadow-color);
+  --transition: 200ms ease;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --bg-primary: var(--gray-900);
+  --bg-secondary: var(--gray-800);
+  --text-primary: var(--gray-100);
+  --text-secondary: var(--gray-300);
+  --border-color: var(--gray-600);
+  --card-bg: var(--gray-800);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* App container */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  width: 100%;
+}
+
+/* Section styles */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-500);
+  margin: var(--space-sm) auto 0;
+  border-radius: var(--radius-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-lg) 0;
+  }
+  
+  .section-title {
+    font-size: 1.875rem;
+  }
+}

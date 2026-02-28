@@ -1,0 +1,244 @@
+/* ====================================
+   Skills.css - Unique & Elegant
+   ==================================== */
+
+.skills {
+  padding: 8rem 0;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.skills-subtitle {
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-500);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.skills-title {
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+
+.skills-title::before {
+  left: -3rem;
+}
+
+.skills-title::after {
+  right: -3rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Flip Card Effect */
+.skill-card {
+  background: transparent;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.skill-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.skill-card:hover .skill-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back */
+.skill-front,
+.skill-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.skill-front {
+  transform: rotateY(0deg);
+}
+
+.skill-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+  border: none;
+}
+
+.skill-back .skill-level {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Front Content */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
+.skills-footer {
+  text-align: center;
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.skills-quote::before,
+.skills-quote::after {
+  content: '"';
+  color: var(--primary-500);
+  font-size: 2rem;
+  opacity: 0.5;
+  font-family: serif;
+}
+
+.skills-quote::before {
+  margin-right: 0.3rem;
+}
+
+.skills-quote::after {
+  margin-left: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills {
+    padding: 5rem 0;
+  }
+
+  .skills-title {
+    font-size: 2.2rem;
+  }
+
+  .skills-title::before,
+  .skills-title::after {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-card {
+    height: 130px;
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-quote {
+    font-size: 1rem;
+  }
+}
+
+/* Optional: Add animation on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-card {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--card-index, 0) * 0.05s);
+  opacity: 0;
+}
+
+/* For index-based delay - add via JS if needed */
+.skill-card:nth-child(1) { --card-index: 1; }
+.skill-card:nth-child(2) { --card-index: 2; }
+.skill-card:nth-child(3) { --card-index: 3; }
+.skill-card:nth-child(4) { --card-index: 4; }
+.skill-card:nth-child(5) { --card-index: 5; }
+.skill-card:nth-child(6) { --card-index: 6; }
+.skill-card:nth-child(7) { --card-index: 7; }
+.skill-card:nth-child(8) { --card-index: 8; }
