@@ -24,7 +24,7 @@ const Projects = () => {
       title: "Interactive Portfolio",
       description: "Developed a component-based React portfolio to demonstrate my frontend development skills and highlight completed projects. Focused on clean architecture, performance optimization, and responsive design.",
       tech: ["React", "JavaScript", "HTML5", "CSS3"],
-      github: "https://github.com/logesh011/portfolio",
+      github: "https://github.com/Loki0117/LogeshPortfolio",
       live: "https://light-house17-rykf.vercel.app/",
       duration: "June 2023",
       features: [
