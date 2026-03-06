@@ -88,7 +88,8 @@ npm start
 The application will run locally at:
 
 http://localhost:3000
- What I Learned
+
+What I Learned
 
 Building this portfolio helped me improve my understanding of:
 * React component architecture
@@ -99,4 +100,5 @@ Building this portfolio helped me improve my understanding of:
 
  Connect With Me
  logeshdev0117@gmail.com ------ Email
+
 
