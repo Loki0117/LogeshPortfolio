@@ -41,7 +41,7 @@ The design focuses on simplicity, readability, and responsiveness across differe
 * Vercel
 
  Project Structure
-LogeshPortfolio
+```LogeshPortfolio
 │
 ├── public
 │
@@ -71,6 +71,7 @@ LogeshPortfolio
 │
 ├── package.json
 └── README.md
+```
 
  Getting Started
 Clone the repository
@@ -100,5 +101,6 @@ Building this portfolio helped me improve my understanding of:
 
  Connect With Me
  logeshdev0117@gmail.com ------ Email
+
 
 
